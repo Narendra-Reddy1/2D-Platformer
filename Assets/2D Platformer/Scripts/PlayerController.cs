@@ -14,6 +14,7 @@ namespace Sovereign
         public float knockBackTime;
         public float knockBackForce;
         public float bounceForce;
+        public float groundCheckRadius = 0.2f;
 
         private float knockBackCounter;
         private float direction;
@@ -110,7 +111,7 @@ namespace Sovereign
 
         private void GroundCheck()
         {
-            isGrounded = Physics2D.OverlapCircle(groundCheck.position, .2f, whatIsGrounded);
+            isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, whatIsGrounded);
         }
         private void PlayerFlip()
         {
